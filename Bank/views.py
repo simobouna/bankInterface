@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from pyrsistent import v
 import requests,json
 from django.http import HttpResponse
 

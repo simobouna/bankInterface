@@ -1,0 +1,55 @@
+{% load static %}
+
+<!-- Header inclus dans tous les autres fichiers -->
+<!-- Modifier ce fichier modifiera le header dans tous les autres -->
+
+<!-- Il y a deux cas :  si l'user est authentifié ou s'il ne l'est pas -->
+<header>
+    <!-- Navigation bar bootstrap -->
+    <nav class="navbar navbar-expand navbar-light bg-light" id="website-logo">
+        <!-- Logo -->
+        <a class="navbar-brand order-0 mr-3" href="/">
+            <img src="{% static 'logo.png' %}" class="logo" alt="" style="height: 50px">
+            <!-- <span class="logo-text align-middle">Adopte Ma Boîte</span> -->
+        </a>
+
+        <!-- Elements de la navbar -->
+        <div class="navbar-nav collapse navbar-collapse order-1" id="navbarText" >
+            <form class="form-inline" action="index.html" method="post" style="margin-left: auto; margin-right:0px" >
+
+            <!-- Bouton de connexion -->
+            <a href="/add_compte" class="text-decoration-none text-reset">
+                <button type="button" class="btn btn-outline-sitinnov ml-3" name="button">
+                    Add account
+                </button>
+            </a>
+            <a href="/update_compte" class="text-decoration-none text-reset">
+              <button type="button" class="btn btn-outline-sitinnov ml-3" name="button">
+                  Update account
+              </button>
+          </a>
+          <a href="/delete_compte" class="text-decoration-none text-reset">
+            <button type="button" class="btn btn-outline-sitinnov ml-3" name="button">
+                Delete account
+            </button>
+        </a>
+        <a href="/add_transaction" class="text-decoration-none text-reset">
+          <button type="button" class="btn btn-outline-sitinnov ml-3" name="button">
+              Add transaction
+          </button>
+      </a>
+      <a href="/update_transaction" class="text-decoration-none text-reset">
+        <button type="button" class="btn btn-outline-sitinnov ml-3" name="button">
+            Update transaction
+        </button>
+    </a>
+    <a href="/delete_transaction" class="text-decoration-none text-reset">
+      <button type="button" class="btn btn-outline-sitinnov ml-3" name="button">
+          Delete transaction
+      </button>
+  </a>
+
+        </form>
+    </div>
+</nav>
+</header>

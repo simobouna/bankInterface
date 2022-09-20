@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <title>MIAGE Bank</title>
+        <!-- Style -->
+        {% include 'style.html' %}
+    </head>
+    <body>
+        <!-- Header -->
+        {% include 'head.html' %}
+
+        <!-- Main content -->
+        <div class="bgimg min-h-500">
+            <div class="wrapper wrapper--w680" style="padding-bottom: 40px; padding-top: 40px">
+                <div class="card card-4">
+                    <div class="card-body">
+                        <div class="container">
+
+                            <!-- Formulaire de connexion -->
+                            <h2 class="title">Update transaction</h2>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <label class="label">Identifiant</label>
+                                            <input class="input--style-4" type="number" name="id">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <label class="label">Date</label>
+                                            <input class="input--style-4" type="date" name="date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <label class="label">From IBAN </label>
+                                            <input class="input--style-4" type="text" name="ibanfrom">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <label class="label">To IBAN</label>
+                                            <input class="input--style-4" type="text" name="ibanto">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <label class="label">Type virement</label>
+                                            <input class="input--style-4" type="text" name="type">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <label class="label">Devise</label>
+                                            <input class="input--style-4" type="text" name="devise">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <label class="label">Montant</label>
+                                            <input class="input--style-4" type="text" name="montant">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center mx-auto">
+                                    <button class="btn btn--radius-2 btn--blue btn-outline-sitinnov " type="submit">
+                                        <a class="text-decoration-none text-reset">Valider</a>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Footer HTML -->
+        {% include 'footer.html' %}
+    </body>
+</html>
+

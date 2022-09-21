@@ -14,7 +14,7 @@ def index(request):
     type = request.POST.get('type', False)
     all = request.POST.get('all', False)
     if iban :
-        ret = requests.get('http://178.32.130.54:8080/Compte/'+iban).content
+        ret = requests.get('http://178.32.130.54:8080/compte/'+iban).content
         return HttpResponse(ret)
 
     if all:

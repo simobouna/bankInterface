@@ -5,13 +5,38 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    data_account = request.POST.get('iban_get', False)
-    data_transaction = request.POST.get('id', False)
-    if data_account :
-        ret = requests.get('http://178.32.130.54:8080/Compte/'+data_account).content
+    iban = request.POST.get('iban_get', False)
+    id = request.POST.get('id', False)
+    devise = request.POST.get('devise', False)
+    date = request.POST.get('date', False)
+    source = request.POST.get('source', False)
+    destination = request.POST.get('destination', False)
+    type = request.POST.get('type', False)
+    all = request.POST.get('all', False)
+    if iban :
+        ret = requests.get('http://178.32.130.54:8080/Compte/'+iban).content
         return HttpResponse(ret)
-    if data_transaction :
-        ret = requests.get('http://178.32.130.54:8080/transaction/'+data_transaction).content
+
+    if all:
+        ret = requests.get('http://178.32.130.54:8080/transaction/all').content
+        return HttpResponse(ret)
+    elif id :
+        ret = requests.get('http://178.32.130.54:8080/transaction/id/'+id).content
+        return HttpResponse(ret)
+    elif date:
+        ret = requests.get('http://178.32.130.54:8080/transaction/date/'+date).content
+        return HttpResponse(ret)
+    elif source:
+        ret = requests.get('http://178.32.130.54:8080/transaction/source/'+source).content
+        return HttpResponse(ret)
+    elif destination:
+        ret = requests.get('http://178.32.130.54:8080/transaction/destination/'+destination).content
+        return HttpResponse(ret)
+    elif devise:
+        ret = requests.get('http://178.32.130.54:8080/transaction/devise/'+devise).content
+        return HttpResponse(ret)
+    elif type:
+        ret = requests.get('http://178.32.130.54:8080/transaction/type/'+type).content
         return HttpResponse(ret)
     return render(request, 'index.html')
 
